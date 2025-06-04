@@ -54,6 +54,7 @@ public class EventService(IEventRepository eventRepository) : IEventService
         return new EventResult<IEnumerable<Event>> { Success = true, Result = events };
     }
 
+
     public async Task<EventResult<Event?>> GetEventAsync(string eventId)
     {
         var result = await _eventRepository.GetAsync(x => x.Id == eventId);
