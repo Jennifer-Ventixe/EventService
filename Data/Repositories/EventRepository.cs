@@ -20,6 +20,7 @@ public class EventRepository(DataContext context) : BaseRepository<EventEntity>(
         catch (Exception ex)
         {
             return new RepositoryResult<IEnumerable<EventEntity>>
+
             {
                 Success = false,
                 Error = ex.Message
