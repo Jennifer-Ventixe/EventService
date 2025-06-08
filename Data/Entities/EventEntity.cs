@@ -21,6 +21,7 @@ public class EventEntity
 
     public string? Description { get; set; }
 
-    public ICollection<EventPackageEntity> Packages { get; set; } = [];
+    public int Price { get; set; }
 
+    public string Currency { get; set; } = "USD";
 }

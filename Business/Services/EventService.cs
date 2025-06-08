@@ -19,7 +19,9 @@ public class EventService(IEventRepository eventRepository) : IEventService
                 Title = request.Title,
                 EventDate = request.EventDate,
                 Location = request.Location,
-                Description = request.Description
+                Description = request.Description,
+                Price = request.Price,
+                Currency = request.Currency
             };
 
             var result = await _eventRepository.AddAsync(eventEntity);
@@ -48,7 +50,10 @@ public class EventService(IEventRepository eventRepository) : IEventService
             Title = x.Title,
             EventDate = x.EventDate,
             Location = x.Location,
-            Description = x.Description
+            Description = x.Description,
+            Price = x.Price,
+            Currency = x.Currency
+
         });
 
         return new EventResult<IEnumerable<Event>> { Success = true, Result = events };
@@ -67,7 +72,10 @@ public class EventService(IEventRepository eventRepository) : IEventService
                 Title = result.Result.Title,
                 EventDate = result.Result.EventDate,
                 Location = result.Result.Location,
-                Description = result.Result.Description
+                Description = result.Result.Description,
+                Price = result.Result.Price,
+                Currency = result.Result.Currency
+
             };
             return new EventResult<Event?> { Success = true, Result = currentEvent };
         }
